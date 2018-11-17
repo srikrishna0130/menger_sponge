@@ -31,13 +31,13 @@ function addMesh(mesh,delay)
     },delay);
 }
 
-var cubeSize = 18;
+var cubeSize = 15;
 var no_iter = 2;
 var x=0,y=0,z=0;
 
-draw_fractal(x+20,y,z,cubeSize,no_iter);
-draw_fractal(x-20,y,z,cubeSize,no_iter+1);
-draw_fractal(x,y+20,z+20,cubeSize,no_iter+2);
+draw_fractal(x+40,y,z,cubeSize,no_iter);
+draw_fractal(x,y,z,cubeSize,no_iter+1);
+draw_fractal(x+20,y,z,cubeSize,no_iter+2);
 
 
 function draw_fractal(x,y,z,length,iterations) {
