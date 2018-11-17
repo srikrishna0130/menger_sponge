@@ -10,12 +10,11 @@ document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
 scene.background = new THREE.Color( 0xCAE4DB);
 var camera = new THREE.PerspectiveCamera(70, WIDTH/HEIGHT,1,1000);
-//var controls = new THREE.OrbitControls(camera);
+var controls = new THREE.OrbitControls(camera);
 
 //setting up camera and orbit controls
 camera.position.set(-10,50,-50);
-//camera.rotatation = 3;
-//controls.update();
+controls.update();
 scene.add(camera);
 
 //adding point source light
@@ -31,13 +30,13 @@ function addMesh(mesh,delay)
     },delay);
 }
 
-var cubeSize = 15;
-var no_iter = 2;
+var cubeSize = 18;
+var no_iter = 1;
 var x=0,y=0,z=0;
 
-draw_fractal(x+40,y,z,cubeSize,no_iter);
-draw_fractal(x,y,z,cubeSize,no_iter+1);
-draw_fractal(x+20,y,z,cubeSize,no_iter+2);
+draw_fractal(x+20,y,z,cubeSize,no_iter);
+draw_fractal(x-20,y,z,cubeSize,no_iter+1);
+draw_fractal(x,y+20,z+20,cubeSize,no_iter+2);
 
 
 function draw_fractal(x,y,z,length,iterations) {
@@ -49,7 +48,7 @@ function draw_fractal(x,y,z,length,iterations) {
 		var cube1 = new THREE.Mesh(box, material);
 		//scene.add(cube1);
 		cube1.position.set(x,y,z);
-		addMesh(cube1,100);
+		addMesh(cube1,1000);
 		
 /*		var cube1 = new THREE.Mesh(box, material);
 		scene.add(cube1);
@@ -177,7 +176,7 @@ function clearThree(obj){
 function render() {
     requestAnimationFrame(render);
 
-    //controls.update();    
+    controls.update();    
     renderer.render(scene, camera);
 }
 render();
