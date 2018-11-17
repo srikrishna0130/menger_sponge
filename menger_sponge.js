@@ -13,7 +13,7 @@ var camera = new THREE.PerspectiveCamera(70, WIDTH/HEIGHT,1,1000);
 var controls = new THREE.OrbitControls(camera);
 
 //setting up camera and orbit controls
-camera.position.set(-10,50,-50);
+camera.position.set(10,50,-50);
 controls.update();
 scene.add(camera);
 
@@ -31,7 +31,7 @@ function addMesh(mesh,delay)
 }
 
 var cubeSize = 18;
-var no_iter = 1;
+var no_iter = 2;
 var x=0,y=0,z=0;
 
 draw_fractal(x+20,y,z,cubeSize,no_iter);
