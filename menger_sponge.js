@@ -31,7 +31,7 @@ function addMesh(mesh,delay)
 }
 
 var cubeSize = 18;
-var no_iter = 2;
+var no_iter = 1;
 var x=0,y=0,z=0;
 
 draw_fractal(x+20,y,z,cubeSize,no_iter);
@@ -48,7 +48,7 @@ function draw_fractal(x,y,z,length,iterations) {
 		var cube1 = new THREE.Mesh(box, material);
 		//scene.add(cube1);
 		cube1.position.set(x,y,z);
-		addMesh(cube1,50);
+		addMesh(cube1,5000);
 		
 /*		var cube1 = new THREE.Mesh(box, material);
 		scene.add(cube1);
